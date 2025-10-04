@@ -6,13 +6,13 @@ export type ConcertDocument = HydratedDocument<Concert>;
 @Schema({ timestamps: true })
 export class Venue {
   @Prop({ required: true })
-  name: string;
+  name!: string;
 
   @Prop({ required: true })
-  city: string;
+  city!: string;
 
   @Prop({ required: true })
-  country: string;
+  country!: string;
 }
 
 export const VenueSchema = SchemaFactory.createForClass(Venue);
@@ -20,19 +20,19 @@ export const VenueSchema = SchemaFactory.createForClass(Venue);
 @Schema({ timestamps: true })
 export class Concert {
   @Prop({ required: true })
-  title: string;
+  title!: string;
 
   @Prop({ type: [String], index: true })
-  genres: string[];
+  genres!: string[];
 
   @Prop({ type: VenueSchema, required: true })
-  venue: Venue;
+  venue!: Venue;
 
   @Prop({ required: true })
-  date: Date;
+  date!: Date;
 
   @Prop({ default: 0 })
-  availableTickets: number;
+  availableTickets!: number;
 }
 
 export const ConcertSchema = SchemaFactory.createForClass(Concert);

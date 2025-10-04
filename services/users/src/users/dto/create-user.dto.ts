@@ -4,12 +4,12 @@ import { IsEmail, IsOptional, IsString, MinLength, IsArray, ArrayNotEmpty } from
 export class CreateUserDto {
   @ApiProperty({ example: 'alice@example.com' })
   @IsEmail()
-  email: string;
+  email!: string;
 
   @ApiProperty({ minLength: 8 })
   @IsString()
   @MinLength(8)
-  password: string;
+  password!: string;
 
   @ApiProperty({ type: [String], required: false })
   @IsArray()
