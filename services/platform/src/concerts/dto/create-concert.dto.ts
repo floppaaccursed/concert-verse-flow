@@ -5,39 +5,39 @@ import { Type } from 'class-transformer';
 class VenueDto {
   @ApiProperty()
   @IsString()
-  name: string;
+  name!: string;
 
   @ApiProperty()
   @IsString()
-  city: string;
+  city!: string;
 
   @ApiProperty()
   @IsString()
-  country: string;
+  country!: string;
 }
 
 export class CreateConcertDto {
   @ApiProperty()
   @IsString()
-  title: string;
+  title!: string;
 
   @ApiProperty({ type: [String] })
   @IsArray()
   @ArrayNotEmpty()
   @IsString({ each: true })
-  genres: string[];
+  genres!: string[];
 
   @ApiProperty({ type: VenueDto })
   @ValidateNested()
   @Type(() => VenueDto)
-  venue: VenueDto;
+  venue!: VenueDto;
 
   @ApiProperty()
   @IsDateString()
-  date: string;
+  date!: string;
 
   @ApiProperty({ default: 0 })
   @IsInt()
   @Min(0)
-  availableTickets: number;
+  availableTickets!: number;
 }

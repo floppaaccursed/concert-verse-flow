@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "sourceMap": false
+    "sourceMap": false,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tests", "**/*.spec.ts", "**/*.test.ts"]
 }
